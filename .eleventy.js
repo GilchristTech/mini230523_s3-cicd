@@ -8,6 +8,6 @@ module.exports = function (config) {
 
 	return {
 		dir: { input: "src", output: "dist", includes: "includes", data: "data" },
-		pathPrefix: null
+		pathPrefix: process.env.PATH_PREFIX || null
 	};
 };

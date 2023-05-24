@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" as="style" href="/common.css">
   <link rel="stylesheet" href="/common.css">
-  <link rel="preload" as="image" href="/static/karthik-sreenivas-WOOJYLnwtJA-unsplash.webp">
+  {% set background_url = "/static/karthik-sreenivas-WOOJYLnwtJA-unsplash.webp" %}
+  <link rel="preload" as="image" href="{{ background_url }}">
   <style>
     :root {
-      --site-background: url("/static/karthik-sreenivas-WOOJYLnwtJA-unsplash.webp");
-			--panel-shadow: 1px 1px 2px #0007;
+      --site-background: url("{{ background_url | htmlBaseUrl }}");
+      --panel-shadow: 1px 1px 2px #0007;
     }
 
     body {
@@ -18,8 +19,8 @@
     }
   </style>
   {% if stylesheet %}
-  <link rel="preload" as="style" href="{{ stylesheet | url }}">
-  <link rel="stylesheet" href="{{ stylesheet | url }}">
+  <link rel="preload" as="style" href="{{ stylesheet }}">
+  <link rel="stylesheet" href="{{ stylesheet }}">
   {% endif %}
   {% block head %}{% endblock %}
 </head>

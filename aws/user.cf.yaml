@@ -20,7 +20,7 @@ Resources:
                 - s3:GetBucketLocation
               Resource:
                 - !Sub arn:aws:s3:::${BucketName}
-                - !Sub arn:aws:s3:::${BucketName}/
+                - !Sub arn:aws:s3:::${BucketName}/*
 
   GithubAccessKey:
     Type: AWS::IAM::AccessKey
