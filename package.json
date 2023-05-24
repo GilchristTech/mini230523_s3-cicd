@@ -1,7 +1,7 @@
 {
-  "name": "2305-23",
+  "name": "mini230523_s3-cicd",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a single-day project for deploying a static 11ty site to an AWS S3 bucket, using GitHub actions.",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
@@ -12,7 +12,16 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "eleventy-sass": "^2.2.1",
     "jmespath": "^0.16.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GilchristTech/mini230523_s3-cicd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GilchristTech/mini230523_s3-cicd/issues"
+  },
+  "homepage": "https://github.com/GilchristTech/mini230523_s3-cicd#readme"
 }

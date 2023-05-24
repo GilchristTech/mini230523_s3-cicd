@@ -1,6 +1,27 @@
 {% extends 'base.njk' %}
 
+{% set prev_plog = collections.plog | getPreviousCollectionItem %}
+{% set next_plog = collections.plog | getNextCollectionItem %}
+
+{% block head %}
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
-		<h1>{{ title }}</h1>
+  <nav class="plog-nav">
+    <a class="prev" href="{{ prev_plog.url }}">Previous</a>
+    <a class="index" href="../">Plog index</a>
+    <a class="next" href="{{ next_plog.url }}">Next</a>
+  </nav>
+
+  <article>
+    <h1>{{ title }}</h1>
     {{ content | safe }}
+  </article>
+
+  <nav class="plog-nav">
+    <a class="prev" href="{{ prev_plog.url }}">Previous</a>
+    <a class="index" href="../">Plog index</a>
+    <a class="next" href="{{ next_plog.url }}">Next</a>
+  </nav>
 {% endblock %}

@@ -3,7 +3,40 @@ main {
 	max-width: 800px;
 	margin: 5vmin auto;
 	@media (min-width: 800px) { width: 100%; }
-	@media (max-width: 800px) { margin: 5vmin 20px; }
+	@media (max-width: 800px) {
+		margin: 5vmin 2vmin;
+		padding: 3vmin;
+	}
 	padding: 5vmin;
 	box-shadow: var(--panel-shadow);
+
+	display: flex;
+	flex-direction: column;
+
+	nav.plog-nav {
+		background: #f8fff8;
+		padding: 1em;
+
+		margin: -2vmin;
+		font-size: 0.85em;
+
+		display: grid;
+		grid-template-columns: repeat(1fr, 3);
+		grid-template-rows: auto;
+
+		a, a:visited {
+			display: block;
+			color: #161;
+			text-decoration: none;
+		}
+
+		.prev  { grid-column: 1;  text-align: left;   }
+		.index { grid-column: 2;  text-align: center; }
+		.next  { grid-column: 3;  text-align: right;  }
+	}
+
+	article {
+		flex-grow: 1;
+		margin-bottom: 2em;
+	}
 }
