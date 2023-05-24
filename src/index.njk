@@ -11,16 +11,16 @@ stylesheet: index.css
 			recollection. Today's project is a CI/CD pipeline for a static site using
 			AWS S3 buckets, GitHub actions, and a small blog-style site made in
 			<a href="https:www.11ty.dev">11ty</a>.</p>
+		<p>The site itself is a project log of itself, a "plog", if you will.</p>
 	</section>
 	<section id="plog">
 		<h2>Plog &mdash; Project Log</h2>
-		<ul>
-			{%- for plog in collections.plog | search('[-3:]') | reverse -%}
+		<ol>
+			{%- for plog in collections.plog -%}
 			<li>
 				<a href="{{ plog.url }}">{{ plog.data.title }}</a>
 			</li>
 			{%- endfor -%}
-		</ul>
-		<p><a href="/plog">All plog entries</a></p>
+		</ol>
 	</section>
 {% endblock %}

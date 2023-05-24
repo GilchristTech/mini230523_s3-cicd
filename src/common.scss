@@ -15,17 +15,30 @@ body {
 
 #site-header,
 #site-footer {
-	background: #efe;
+	background: #8f84;
+	backdrop-filter: blur(12px);
+	box-shadow: 0 0 14px black;
+	color: #efe;
 	display: flex; flex-flow: row wrap;
 	align-items: center;
 	justify-content: space-between;
 
 	&#site-header {
 		padding: 0 1em;
+		font-size: 1.5em;
 		height: 2em;
+		a {
+			color: white;
+			text-decoration: none;
+		}
 	}
 
 	&#site-footer {
 		padding: 5vh 2em;
+	}
+
+	a {
+		color: #8cf;
+		&:visited { color: #9df; }
 	}
 }
