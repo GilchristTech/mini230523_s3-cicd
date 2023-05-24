@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if title %}{{ title }} &mdash; {% endif %}{{ site.name }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="style" href="/common.css">
+  <link rel="stylesheet" href="/common.css">
+  <link rel="preload" as="image" href="/static/karthik-sreenivas-WOOJYLnwtJA-unsplash.webp">
+  <style>
+    :root {
+      --site-background: url("/static/karthik-sreenivas-WOOJYLnwtJA-unsplash.webp");
+			--panel-shadow: 1px 1px 2px #0007;
+    }
+
+    body {
+      background: var(--site-background) fixed center/cover;
+    }
+  </style>
+  {% if stylesheet %}
+  <link rel="preload" as="style" href="{{ stylesheet | url }}">
+  <link rel="stylesheet" href="{{ stylesheet | url }}">
+  {% endif %}
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header id="site-header">
+    <a class="brand" href="/">{{ site.name }}</a>
+  </header>
+  <main>
+    {% block main %}{{ content | safe }}{% endblock %}
+  </main>
+  <footer id="site-footer">
+    <div class="copyright">
+      <p>&copy;2023 &mdash;&nbsp;Everyone</p>
+      <p>All rights reserved</p>
+      <p>Developed by <a href="https://gilchrist.tech/">Gilchrist.tech</a></p>
+    </div>
+  </footer>
+</body>
+</html>

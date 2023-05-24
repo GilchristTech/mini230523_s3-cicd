@@ -1,0 +1,26 @@
+---
+stylesheet: index.css
+---
+{% extends 'base.njk' %}
+
+{% block main %}
+	<section id="fold">
+		<h1>It's May 23rd, 2023</h1>
+		<p>And this is a mini-website project. I like to work on single-day projects
+			which reinforce things I've learned, taking a focus on speed and
+			recollection. Today's project is a CI/CD pipeline for a static site using
+			AWS S3 buckets, GitHub actions, and a small blog-style site made in
+			<a href="https:www.11ty.dev">11ty</a>.</p>
+	</section>
+	<section id="plog">
+		<h2>Plog &mdash; Project Log</h2>
+		<ul>
+			{%- for plog in collections.plog | search('[-3:]') | reverse -%}
+			<li>
+				<a href="{{ plog.url }}">{{ plog.data.title }}</a>
+			</li>
+			{%- endfor -%}
+		</ul>
+		<p><a href="/plog">All plog entries</a></p>
+	</section>
+{% endblock %}

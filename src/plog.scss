@@ -1,0 +1,9 @@
+main {
+	background: white;
+	max-width: 800px;
+	margin: 5vmin auto;
+	@media (min-width: 800px) { width: 100%; }
+	@media (max-width: 800px) { margin: 5vmin 20px; }
+	padding: 5vmin;
+	box-shadow: var(--panel-shadow);
+}

@@ -1,0 +1,20 @@
+---
+title: Plog
+stylesheet: /plog.css
+tags:
+  - page
+---
+{% extends 'base.njk' %}
+
+{% block main %}
+	<section id="plog-index">
+		<h1>Plog &mdash; Project Log</h1>
+		<ol reversed>
+			{%- for plog in collections.plog | reverse -%}
+			<li>
+				<a href="{{ plog.url }}">{{ plog.data.title }}</a>
+			</li>
+			{%- endfor -%}
+		</ol>
+	</section>
+{% endblock %}

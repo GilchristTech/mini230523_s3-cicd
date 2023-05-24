@@ -1,0 +1,31 @@
+*, *::before, *::after { box-sizing: inherit; }
+
+h1,h2 {
+	border-bottom: 2px solid #8888;
+}
+
+body {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	display: flex; flex-direction: column;
+	min-height: 100vh;
+	&> main { flex-grow: 1; }
+}
+
+#site-header,
+#site-footer {
+	background: #efe;
+	display: flex; flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	&#site-header {
+		padding: 0 1em;
+		height: 2em;
+	}
+
+	&#site-footer {
+		padding: 5vh 2em;
+	}
+}
