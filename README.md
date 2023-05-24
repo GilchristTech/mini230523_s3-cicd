@@ -9,6 +9,7 @@ S3 bucket, using GitHub actions.
 This repo hosts both the static site code and cloud code, and different directories have
 different purposes.
 
-* `src/`: Static 11ty site source code
-* `static/`: Static files for the 11ty site
-* `.github/workflows/`: GitHub actions code
+	* `src/`: Static 11ty site source code
+	* `static/`: Static files for the 11ty site
+	* `.github/workflows/`: GitHub actions code
+	* `aws/`: Scripts and templates for AWS

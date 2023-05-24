@@ -1,0 +1,39 @@
+Parameters:
+  BucketName:
+    Type: String
+    Default: gill-mini
+
+Resources:
+  GithubUser:
+    Type: AWS::IAM::User
+    Properties:
+      Policies:
+        - PolicyName: GithubS3Sync
+          PolicyDocument:
+            Statement:
+            - Effect: Allow
+              Action:
+                - s3:PutObject
+                - s3:GetObject
+                - s3:ListBucket
+                - s3:DeleteObject
+                - s3:GetBucketLocation
+              Resource:
+                - !Sub arn:aws:s3:::${BucketName}
+                - !Sub arn:aws:s3:::${BucketName}/
+
+  GithubAccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      Status:   Active
+      UserName: !Ref GithubUser
+
+  GithubSecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub /mini/credentials/${GithubUser}
+      SecretString: !Sub |
+        {
+          "AWS_ACCESS_KEY_ID": "${GithubAccessKey}",
+          "AWS_SECRET_ACCESS_KEY": "${GithubAccessKey.SecretAccessKey}"
+        }
