@@ -83,6 +83,6 @@ Now the pages on the site can be viewed via HTTP to the S3 bucket's public url!
 Well... kinda. 11ty puts `index.html` files throughout the build's directory
 structure, and normally this works quite well for resolving URLs, but S3 doesn't
 know to redirect requests to these index files. I believe this is handled with
-AWS CloudFormation, which I've never actually worked with. So looking into that
+AWS ~~CloudFormation~~ CloudFront, which I've never actually worked with. So looking into that
 is the next step! I've worked on this for nine hours, though, so if it doesn't
 appear to be something I can do quickly, I'll be heading to sleep instead.
